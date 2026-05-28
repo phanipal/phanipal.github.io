@@ -8,8 +8,11 @@
 <meta property="og:title" content="Phanendra Paladugu | Data Scientist & ML Engineer">
 <meta property="og:description" content="Portfolio showcasing production ML systems, NLP pipelines, and document intelligence">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://phanipal.github.io/preview.png">
 <meta property="og:url" content="https://phanipal.github.io">
+<meta property="og:image" content="https://phanipal.github.io/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Phanendra Paladugu | Data Scientist & ML Engineer">
+<meta name="twitter:image" content="https://phanipal.github.io/preview.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -74,6 +77,11 @@ body {
 }
 
 .content-wrap { position: relative; z-index: 2; }
+.content-wrap > nav,
+.content-wrap > section,
+.content-wrap > .hero,
+.content-wrap > .metrics,
+.content-wrap > footer { position: relative; z-index: 1; }
 
 /* ---- NAV ---- */
 nav {
@@ -452,6 +460,37 @@ footer {
 }
 @keyframes blink { 50% { opacity: 0; } }
 
+/* ---- FORMULA OVERLAY ---- */
+.formula-layer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.formula {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(124, 255, 107, 0.06);
+  white-space: nowrap;
+  transform-origin: center;
+}
+.formula.bright { color: rgba(124, 255, 107, 0.09); }
+.formula.amber { color: rgba(244, 211, 94, 0.05); }
+.formula.sm { font-size: 11px; }
+.formula.md { font-size: 14px; }
+.formula.lg { font-size: 18px; }
+.formula.xl { font-size: 24px; }
+.formula.rot-5 { transform: rotate(-5deg); }
+.formula.rot5 { transform: rotate(5deg); }
+.formula.rot-10 { transform: rotate(-10deg); }
+.formula.rot10 { transform: rotate(10deg); }
+.formula.rot-15 { transform: rotate(-15deg); }
+.formula.rot15 { transform: rotate(15deg); }
+.formula.rot-2 { transform: rotate(-2deg); }
+.formula.rot2 { transform: rotate(2deg); }
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
   .crt-frame { margin: 8px; border-radius: 8px; }
@@ -480,6 +519,48 @@ footer {
 
 <div class="crt-frame">
 <div class="content-wrap">
+
+<!-- Formula overlay layer - decorative AI/ML formulas behind content -->
+<div class="formula-layer">
+  <!-- Gradient Descent / Optimization -->
+  <span class="formula md rot-5" style="top:3%;left:2%">θ = θ - α∇J(θ)</span>
+  <span class="formula sm rot5" style="top:8%;right:5%">∂L/∂w = 2(ŷ - y)·x</span>
+  <span class="formula lg rot-2 bright" style="top:18%;left:60%">Σ wᵢxᵢ + b</span>
+
+  <!-- Softmax / Probability -->
+  <span class="formula md rot10" style="top:28%;left:3%">P(y|x) = softmax(Wx + b)</span>
+  <span class="formula sm rot-10 amber" style="top:35%;right:3%">H(p,q) = -Σp(x)log q(x)</span>
+
+  <!-- Attention / Transformers -->
+  <span class="formula lg rot-5 bright" style="top:42%;left:8%">Attn(Q,K,V) = softmax(QKᵀ/√d)V</span>
+  <span class="formula sm rot2" style="top:48%;right:8%">emb(w) ∈ ℝᵈ</span>
+
+  <!-- Cosine Similarity / Embeddings -->
+  <span class="formula md rot5 amber" style="top:55%;left:2%">cos(θ) = A·B / ‖A‖‖B‖</span>
+  <span class="formula sm rot-5" style="top:58%;right:4%">TF-IDF(t,d) = tf(t,d) · log(N/df(t))</span>
+
+  <!-- Loss Functions -->
+  <span class="formula md rot-10" style="top:65%;left:5%">L = -Σ yᵢ log(ŷᵢ)</span>
+  <span class="formula lg rot2 bright" style="top:70%;right:6%">RMSE = √(Σ(y-ŷ)²/n)</span>
+
+  <!-- Bayes / Stats -->
+  <span class="formula sm rot5 amber" style="top:76%;left:3%">P(A|B) = P(B|A)P(A) / P(B)</span>
+  <span class="formula md rot-2" style="top:80%;right:3%">σ(z) = 1/(1+e⁻ᶻ)</span>
+
+  <!-- F1 / Metrics -->
+  <span class="formula sm rot-5" style="top:85%;left:8%">F1 = 2·(P·R)/(P+R)</span>
+  <span class="formula md rot10 bright" style="top:88%;right:10%">AUC-ROC ∈ [0,1]</span>
+
+  <!-- RAG / Retrieval -->
+  <span class="formula sm rot-10 amber" style="top:92%;left:4%">Recall@K = |relevant ∩ retrieved@K| / |relevant|</span>
+  <span class="formula sm rot2" style="top:95%;right:5%">MRR = 1/|Q| Σ 1/rankᵢ</span>
+
+  <!-- Extra scattered formulas -->
+  <span class="formula sm rot-2" style="top:12%;left:35%">∇L = ∂L/∂θ</span>
+  <span class="formula sm rot5 amber" style="top:38%;left:45%">KL(p‖q) = Σp log(p/q)</span>
+  <span class="formula sm rot-5" style="top:52%;left:30%">BLEU = BP · exp(Σwₙ log pₙ)</span>
+  <span class="formula sm rot10" style="top:72%;left:40%">argmin Σ‖xᵢ - μₖ‖²</span>
+</div>
 
 <!-- ============ NAV ============ -->
 <nav>
