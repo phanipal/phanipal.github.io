@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phanendra Paladugu | Data Scientist & ML Engineer</title>
+<meta name="description" content="Portfolio showcasing production ML systems, NLP pipelines, and document intelligence">
+<meta property="og:title" content="Phanendra Paladugu | Data Scientist & ML Engineer">
+<meta property="og:description" content="Portfolio showcasing production ML systems, NLP pipelines, and document intelligence">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   EDIT GUIDE:
+   - Colors: change :root variables below
+   - Content: search for "EDIT:" comments
+   - Resume: replace resume.pdf in the same folder
+   ============================================ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-main: #020503;
+  --bg-screen: #041006;
+  --bg-card: #071708;
+  --bg-card-hover: #0a2210;
+  --text-main: #D6F5D6;
+  --text-muted: #9CCF9C;
+  --accent-green: #7CFF6B;
+  --accent-amber: #F4D35E;
+  --border: #2E5F3A;
+  --white-soft: #F8FFF8;
+  --font: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* CRT Frame */
+.crt-frame {
+  max-width: 1100px;
+  margin: 20px auto;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-screen);
+  box-shadow: 0 0 60px rgba(124, 255, 107, 0.05), inset 0 0 80px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scanline overlay */
+.crt-frame::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.08) 2px,
+    rgba(0,0,0,0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content-wrap { position: relative; z-index: 2; }
+
+/* ---- NAV ---- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px dashed var(--border);
+}
+.nav-logo {
+  color: var(--accent-green);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent-green); }
+
+/* ---- HERO ---- */
+.hero {
+  padding: 48px 32px 32px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: start;
+}
+.hero-left {}
+.terminal-cmd {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.terminal-cmd span { color: var(--accent-green); }
+.hero-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--white-soft);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+/* EDIT: Change your title here */
+.hero-title {
+  font-size: 16px;
+  color: var(--accent-amber);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.hero-headline {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.5px;
+}
+.btn-primary {
+  background: var(--accent-green);
+  color: #020503;
+}
+.btn-primary:hover { background: #5edf4d; box-shadow: 0 0 16px rgba(124,255,107,0.3); }
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-green);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover { border-color: var(--accent-green); background: rgba(124,255,107,0.05); }
+.btn-amber {
+  background: var(--accent-amber);
+  color: #020503;
+}
+.btn-amber:hover { background: #e6c34e; }
+
+/* Profile Card */
+.profile-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+}
+.profile-card h3 {
+  color: var(--accent-amber);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.profile-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.profile-label {
+  color: var(--accent-green);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+.profile-value {
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+/* ---- METRICS ---- */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 0 32px 32px;
+}
+.metric-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 16px;
+  text-align: center;
+}
+.metric-num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-green);
+  line-height: 1;
+}
+.metric-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* ---- SECTIONS ---- */
+.section {
+  padding: 32px 32px;
+  border-top: 1px dashed var(--border);
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.section-header h2 {
+  color: var(--accent-amber);
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.section-cmd {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* ---- PROJECTS ---- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.project-card:hover { border-color: var(--accent-green); background: var(--bg-card-hover); }
+.project-type {
+  font-size: 11px;
+  color: var(--accent-amber);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.project-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white-soft);
+  margin-bottom: 8px;
+}
+.project-tech {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.project-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.tag {
+  font-size: 11px;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--accent-green);
+}
+.project-link {
+  color: var(--accent-green);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+.project-link:hover { text-decoration: underline; }
+
+/* ---- SKILLS ---- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.skill-module {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+.skill-module-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-amber);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+.skill-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-size: 11px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-main);
+  background: rgba(124,255,107,0.03);
+}
+
+/* ---- EXPERIENCE ---- */
+.exp-entry {
+  padding: 20px 0;
+  border-bottom: 1px dashed rgba(46,95,58,0.4);
+}
+.exp-entry:last-child { border-bottom: none; }
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.exp-role {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white-soft);
+}
+.exp-date {
+  font-size: 12px;
+  color: var(--accent-green);
+  white-space: nowrap;
+}
+.exp-company {
+  font-size: 13px;
+  color: var(--accent-amber);
+  margin-bottom: 8px;
+}
+.exp-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- EDUCATION ---- */
+.edu-block {}
+.edu-degree {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white-soft);
+  margin-bottom: 4px;
+}
+.edu-school {
+  font-size: 13px;
+  color: var(--accent-amber);
+  margin-bottom: 4px;
+}
+.edu-details {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.edu-coursework {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+.edu-coursework span { color: var(--accent-green); }
+
+/* ---- CONTACT ---- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 13px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-card:hover { border-color: var(--accent-green); background: var(--bg-card-hover); }
+.contact-icon {
+  font-size: 20px;
+  color: var(--accent-green);
+}
+.contact-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.contact-value {
+  font-size: 12px;
+  color: var(--text-main);
+  text-align: center;
+  word-break: break-all;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  padding: 20px 32px;
+  border-top: 1px dashed var(--border);
+  text-align: center;
+}
+.footer-text {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: var(--accent-green);
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .crt-frame { margin: 8px; border-radius: 8px; }
+  nav { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 11px; }
+  .hero { grid-template-columns: 1fr; padding: 32px 16px 24px; }
+  .hero-name { font-size: 24px; }
+  .hero-title { font-size: 14px; }
+  .metrics { grid-template-columns: repeat(2, 1fr); padding: 0 16px 24px; }
+  .section { padding: 24px 16px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .exp-top { flex-direction: column; gap: 2px; }
+}
+@media (max-width: 480px) {
+  .hero-buttons { flex-direction: column; }
+  .btn { text-align: center; }
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="crt-frame">
+<div class="content-wrap">
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="nav-logo">PHANI@ML-WORKSTATION</div>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<!-- EDIT: Update name, title, headline below -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="terminal-cmd"><span>phani@ml-workstation:~$</span> python portfolio.py</div>
+    <h1 class="hero-name">Phanendra Paladugu</h1>
+    <div class="hero-title">Data Scientist | ML Engineer | AI/ML Engineer</div>
+    <p class="hero-headline">Data Scientist building production ML systems for finance, NLP, and document intelligence. 5+ years across enterprise and financial environments.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#skills" class="btn btn-secondary">Scan Skills</a>
+      <!-- EDIT: Place your resume.pdf in the same folder as this file -->
+      <a href="resume.pdf" class="btn btn-amber" target="_blank">Download Resume</a>
+      <a href="mailto:phanendraus111@gmail.com" class="btn btn-secondary">Email</a>
+    </div>
+  </div>
+  <div class="profile-card">
+    <h3>Profile Summary</h3>
+    <!-- EDIT: Update your summary here -->
+    <p>5+ years across ML, NLP, and data engineering. Currently at Wells Fargo building credit risk and churn models. Previously automated ticket classification at Infosys (30% faster resolution).</p>
+    <p>Two production-grade open-source projects with CI/CD, drift monitoring, and full test coverage.</p>
+    <div class="profile-label">Role Focus</div>
+    <div class="profile-value">Data Scientist &middot; ML Engineer</div>
+    <div class="profile-label">Featured Work</div>
+    <div class="profile-value">IntelliDesk &middot; DocBrain</div>
+    <div class="profile-label">Core Stack</div>
+    <div class="profile-value">Python &middot; TensorFlow &middot; XGBoost &middot; PySpark &middot; FastAPI</div>
+  </div>
+</section>
+
+<!-- ============ METRICS ============ -->
+<!-- EDIT: Update numbers and labels -->
+<div class="metrics">
+  <div class="metric-box">
+    <div class="metric-num">30%</div>
+    <div class="metric-label">Ticket resolution time reduced</div>
+  </div>
+  <div class="metric-box">
+    <div class="metric-num">800+</div>
+    <div class="metric-label">Hours saved annually via automation</div>
+  </div>
+  <div class="metric-box">
+    <div class="metric-num">0.90</div>
+    <div class="metric-label">Recall@5 on DocBrain RAG</div>
+  </div>
+  <div class="metric-box">
+    <div class="metric-num">162</div>
+    <div class="metric-label">Pytest tests across systems</div>
+  </div>
+</div>
+
+<!-- ============ PROJECTS ============ -->
+<!-- EDIT: Update project details below -->
+<section class="section" id="projects">
+  <div class="section-header">
+    <div class="section-cmd">~/projects$</div>
+    <h2>Featured Projects</h2>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-type">ML Ticket Triage System</div>
+      <div class="project-name">IntelliDesk</div>
+      <div class="project-tech">Python, FastAPI, XGBoost, TF-IDF, Sentence-Transformers, FAISS, MLflow, Streamlit, Evidently AI, Docker</div>
+      <p class="project-desc">End-to-end ML system for IT ticket triage with dual XGBoost classifiers for category and priority. Solved 12:1 class imbalance using sqrt-scaled weights. Sentence-transformer + FAISS retrieval for knowledge base search. MLflow tracking, Evidently drift monitoring, 39-check validation suite, full CI/CD via GitHub Actions.</p>
+      <div class="project-tags">
+        <span class="tag">XGBoost</span>
+        <span class="tag">FAISS</span>
+        <span class="tag">NLP</span>
+        <span class="tag">MLflow</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Docker</span>
+      </div>
+      <a href="https://github.com/phanipal/Intellidesk" target="_blank" class="project-link">&gt; View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-type">Document RAG Pipeline</div>
+      <div class="project-name">DocBrain</div>
+      <div class="project-tech">Python, PyTorch, ChromaDB, Sentence-Transformers, Llama 3.1 8B, Tesseract/DocTR, SpaCy, FastAPI, Streamlit</div>
+      <p class="project-desc">Grounded RAG pipeline for messy PDFs using ChromaDB, Sentence-Transformers, and Llama 3.1 8B with chunk-level citations. 0.90 Recall@5, 0.78 MRR, 23ms p95 latency. LLM-judge faithfulness scoring that caught answer-quality issues on correctly-retrieved queries. Quality-based OCR routing, SpaCy NER, 162 pytest tests.</p>
+      <div class="project-tags">
+        <span class="tag">RAG</span>
+        <span class="tag">LLM</span>
+        <span class="tag">ChromaDB</span>
+        <span class="tag">FAISS</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Docker</span>
+      </div>
+      <a href="https://github.com/phanipal/docbrain" target="_blank" class="project-link">&gt; View on GitHub</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<!-- EDIT: Add or remove skills in each module -->
+<section class="section" id="skills">
+  <div class="section-header">
+    <div class="section-cmd">~/skills$</div>
+    <h2>Skill Modules</h2>
+  </div>
+  <div class="skills-grid">
+
+    <div class="skill-module">
+      <div class="skill-module-title">Machine Learning</div>
+      <div class="skill-chips">
+        <span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">Scikit-learn</span><span class="chip">XGBoost</span><span class="chip">LightGBM</span><span class="chip">MLflow</span><span class="chip">Evidently AI</span>
+      </div>
+    </div>
+
+    <div class="skill-module">
+      <div class="skill-module-title">NLP / GenAI</div>
+      <div class="skill-chips">
+        <span class="chip">LangChain</span><span class="chip">Llama 3.1</span><span class="chip">Sentence Transformers</span><span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">SpaCy</span><span class="chip">NLTK</span>
+      </div>
+    </div>
+
+    <div class="skill-module">
+      <div class="skill-module-title">Data Engineering</div>
+      <div class="skill-chips">
+        <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">PySpark</span><span class="chip">Apache Spark</span><span class="chip">ETL Pipelines</span>
+      </div>
+    </div>
+
+    <div class="skill-module">
+      <div class="skill-module-title">Computer Vision</div>
+      <div class="skill-chips">
+        <span class="chip">OpenCV</span><span class="chip">Tesseract/DocTR</span><span class="chip">Image Segmentation</span><span class="chip">Transfer Learning</span>
+      </div>
+    </div>
+
+    <div class="skill-module">
+      <div class="skill-module-title">Apps / APIs</div>
+      <div class="skill-chips">
+        <span class="chip">FastAPI</span><span class="chip">Flask</span><span class="chip">Streamlit</span><span class="chip">Docker</span><span class="chip">pytest</span>
+      </div>
+    </div>
+
+    <div class="skill-module">
+      <div class="skill-module-title">Cloud / DevOps</div>
+      <div class="skill-chips">
+        <span class="chip">AWS S3</span><span class="chip">SageMaker</span><span class="chip">EC2</span><span class="chip">GCP BigQuery</span><span class="chip">Vertex AI</span><span class="chip">Git</span><span class="chip">GitHub Actions</span>
+      </div>
+    </div>
+
+    <div class="skill-module">
+      <div class="skill-module-title">BI / Visualization</div>
+      <div class="skill-chips">
+        <span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span><span class="chip">Plotly</span>
+      </div>
+    </div>
+
+    <div class="skill-module">
+      <div class="skill-module-title">Statistical Methods</div>
+      <div class="skill-chips">
+        <span class="chip">Regression</span><span class="chip">Classification</span><span class="chip">Clustering</span><span class="chip">Time Series</span><span class="chip">A/B Testing</span><span class="chip">Hypothesis Testing</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<!-- EDIT: Update roles, companies, dates, descriptions -->
+<section class="section" id="experience">
+  <div class="section-header">
+    <div class="section-cmd">~/experience$</div>
+    <h2>Experience Log</h2>
+  </div>
+
+  <div class="exp-entry">
+    <div class="exp-top">
+      <span class="exp-role">Data Scientist</span>
+      <span class="exp-date">Jan 2025 - Present</span>
+    </div>
+    <div class="exp-company">Wells Fargo, Indiana</div>
+    <p class="exp-desc">Building credit risk and churn models using XGBoost, LightGBM, and PySpark. Model monitoring with Evidently AI. A/B testing on customer strategies. Feature engineering on million-row financial datasets. Dashboards in Streamlit and Power BI for risk management teams.</p>
+  </div>
+
+  <div class="exp-entry">
+    <div class="exp-top">
+      <span class="exp-role">Lab Assistant</span>
+      <span class="exp-date">Aug 2024 - Dec 2024</span>
+    </div>
+    <div class="exp-company">Purdue University, Indiana</div>
+    <p class="exp-desc">Guided students through electrical measurements, circuit design, and debugging. Reviewed lab reports for data accuracy and technical reasoning.</p>
+  </div>
+
+  <div class="exp-entry">
+    <div class="exp-top">
+      <span class="exp-role">Technology Analyst</span>
+      <span class="exp-date">Jan 2020 - Dec 2021</span>
+    </div>
+    <div class="exp-company">Infosys, India</div>
+    <p class="exp-desc">Built a deep learning ticket classifier (TensorFlow/Keras) that reduced resolution time by 30% on 200+ monthly incidents. Predictive models for supply chain anomaly detection using XGBoost. Power BI dashboards for model metrics and stakeholder reporting.</p>
+  </div>
+
+  <div class="exp-entry">
+    <div class="exp-top">
+      <span class="exp-role">Senior Systems Engineer</span>
+      <span class="exp-date">Jan 2017 - Dec 2019</span>
+    </div>
+    <div class="exp-company">Infosys, India</div>
+    <p class="exp-desc">Automated ETL workflows using Python, Selenium, and SAP BW/APO, saving 800+ hours per year. Built data pipelines feeding into forecasting models. SQL-based data extraction and validation across global supply chain operations.</p>
+  </div>
+
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<!-- EDIT: Update degree, school, GPA, coursework -->
+<section class="section" id="education">
+  <div class="section-header">
+    <div class="section-cmd">~/education$</div>
+    <h2>Education</h2>
+  </div>
+  <div class="edu-block">
+    <div class="edu-degree">MS in Electrical and Computer Engineering</div>
+    <div class="edu-school">Purdue University Northwest, Hammond, Indiana</div>
+    <div class="edu-details">GPA: 3.61/4 &middot; 2025</div>
+    <div class="edu-coursework"><span>Coursework:</span> Machine Learning, Neural Networks, Big Data, Computer Vision, Digital Signal Processing, Computer Networks</div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<!-- EDIT: Update email, phone, GitHub, LinkedIn URLs -->
+<section class="section" id="contact">
+  <div class="section-header">
+    <div class="section-cmd">~/contact$</div>
+    <h2>Get In Touch</h2>
+  </div>
+  <div class="contact-grid">
+    <a href="mailto:phanendraus111@gmail.com" class="contact-card">
+      <div class="contact-icon">✉</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">phanendraus111@gmail.com</div>
+    </a>
+    <a href="tel:+12194550679" class="contact-card">
+      <div class="contact-icon">☎</div>
+      <div class="contact-label">Phone</div>
+      <div class="contact-value">(219) 455-0679</div>
+    </a>
+    <a href="https://github.com/phanipal" target="_blank" class="contact-card">
+      <div class="contact-icon">⬡</div>
+      <div class="contact-label">GitHub</div>
+      <div class="contact-value">github.com/phanipal</div>
+    </a>
+    <a href="https://www.linkedin.com/in/phanendra-p/" target="_blank" class="contact-card">
+      <div class="contact-icon">in</div>
+      <div class="contact-label">LinkedIn</div>
+      <div class="contact-value">linkedin.com/in/phanendra-p</div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-text">phani@ml-workstation:~$ <span class="cursor-blink"></span></div>
+</footer>
+
+</div><!-- content-wrap -->
+</div><!-- crt-frame -->
+
+<script>
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
