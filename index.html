@@ -461,6 +461,7 @@ footer {
 @keyframes blink { 50% { opacity: 0; } }
 
 /* ---- FORMULA OVERLAY ---- */
+/* Background formulas - behind content */
 .formula-layer {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -472,16 +473,31 @@ footer {
 .formula {
   position: absolute;
   font-family: 'JetBrains Mono', monospace;
-  color: rgba(124, 255, 107, 0.06);
   white-space: nowrap;
   transform-origin: center;
+  pointer-events: none;
+  user-select: none;
 }
-.formula.bright { color: rgba(124, 255, 107, 0.09); }
-.formula.amber { color: rgba(244, 211, 94, 0.05); }
-.formula.sm { font-size: 11px; }
-.formula.md { font-size: 14px; }
-.formula.lg { font-size: 18px; }
-.formula.xl { font-size: 24px; }
+/* Green tiers */
+.formula.g1 { color: rgba(124, 255, 107, 0.04); }
+.formula.g2 { color: rgba(124, 255, 107, 0.07); }
+.formula.g3 { color: rgba(124, 255, 107, 0.10); }
+.formula.g4 { color: rgba(124, 255, 107, 0.14); }
+.formula.g5 { color: rgba(124, 255, 107, 0.18); }
+/* Amber tiers */
+.formula.a1 { color: rgba(244, 211, 94, 0.03); }
+.formula.a2 { color: rgba(244, 211, 94, 0.06); }
+.formula.a3 { color: rgba(244, 211, 94, 0.09); }
+.formula.a4 { color: rgba(244, 211, 94, 0.13); }
+/* Sizes */
+.formula.xs { font-size: 10px; }
+.formula.sm { font-size: 13px; }
+.formula.md { font-size: 17px; }
+.formula.lg { font-size: 22px; }
+.formula.xl { font-size: 30px; }
+.formula.xxl { font-size: 42px; }
+.formula.xxxl { font-size: 56px; }
+/* Rotations */
 .formula.rot-5 { transform: rotate(-5deg); }
 .formula.rot5 { transform: rotate(5deg); }
 .formula.rot-10 { transform: rotate(-10deg); }
@@ -490,6 +506,16 @@ footer {
 .formula.rot15 { transform: rotate(15deg); }
 .formula.rot-2 { transform: rotate(-2deg); }
 .formula.rot2 { transform: rotate(2deg); }
+.formula.rot-20 { transform: rotate(-20deg); }
+.formula.rot20 { transform: rotate(20deg); }
+.formula.rot-30 { transform: rotate(-30deg); }
+.formula.rot30 { transform: rotate(30deg); }
+.formula.rot-45 { transform: rotate(-45deg); }
+.formula.rot45 { transform: rotate(45deg); }
+
+.section { position: relative; }
+.hero { position: relative; }
+.metrics { position: relative; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
@@ -520,46 +546,58 @@ footer {
 <div class="crt-frame">
 <div class="content-wrap">
 
-<!-- Formula overlay layer - decorative AI/ML formulas behind content -->
+<!-- Formula BACKGROUND layer - behind content -->
 <div class="formula-layer">
-  <!-- Gradient Descent / Optimization -->
-  <span class="formula md rot-5" style="top:3%;left:2%">θ = θ - α∇J(θ)</span>
-  <span class="formula sm rot5" style="top:8%;right:5%">∂L/∂w = 2(ŷ - y)·x</span>
-  <span class="formula lg rot-2 bright" style="top:18%;left:60%">Σ wᵢxᵢ + b</span>
-
-  <!-- Softmax / Probability -->
-  <span class="formula md rot10" style="top:28%;left:3%">P(y|x) = softmax(Wx + b)</span>
-  <span class="formula sm rot-10 amber" style="top:35%;right:3%">H(p,q) = -Σp(x)log q(x)</span>
-
-  <!-- Attention / Transformers -->
-  <span class="formula lg rot-5 bright" style="top:42%;left:8%">Attn(Q,K,V) = softmax(QKᵀ/√d)V</span>
-  <span class="formula sm rot2" style="top:48%;right:8%">emb(w) ∈ ℝᵈ</span>
-
-  <!-- Cosine Similarity / Embeddings -->
-  <span class="formula md rot5 amber" style="top:55%;left:2%">cos(θ) = A·B / ‖A‖‖B‖</span>
-  <span class="formula sm rot-5" style="top:58%;right:4%">TF-IDF(t,d) = tf(t,d) · log(N/df(t))</span>
-
-  <!-- Loss Functions -->
-  <span class="formula md rot-10" style="top:65%;left:5%">L = -Σ yᵢ log(ŷᵢ)</span>
-  <span class="formula lg rot2 bright" style="top:70%;right:6%">RMSE = √(Σ(y-ŷ)²/n)</span>
-
-  <!-- Bayes / Stats -->
-  <span class="formula sm rot5 amber" style="top:76%;left:3%">P(A|B) = P(B|A)P(A) / P(B)</span>
-  <span class="formula md rot-2" style="top:80%;right:3%">σ(z) = 1/(1+e⁻ᶻ)</span>
-
-  <!-- F1 / Metrics -->
-  <span class="formula sm rot-5" style="top:85%;left:8%">F1 = 2·(P·R)/(P+R)</span>
-  <span class="formula md rot10 bright" style="top:88%;right:10%">AUC-ROC ∈ [0,1]</span>
-
-  <!-- RAG / Retrieval -->
-  <span class="formula sm rot-10 amber" style="top:92%;left:4%">Recall@K = |relevant ∩ retrieved@K| / |relevant|</span>
-  <span class="formula sm rot2" style="top:95%;right:5%">MRR = 1/|Q| Σ 1/rankᵢ</span>
-
-  <!-- Extra scattered formulas -->
-  <span class="formula sm rot-2" style="top:12%;left:35%">∇L = ∂L/∂θ</span>
-  <span class="formula sm rot5 amber" style="top:38%;left:45%">KL(p‖q) = Σp log(p/q)</span>
-  <span class="formula sm rot-5" style="top:52%;left:30%">BLEU = BP · exp(Σwₙ log pₙ)</span>
-  <span class="formula sm rot10" style="top:72%;left:40%">argmin Σ‖xᵢ - μₖ‖²</span>
+  <span class="formula xxxl rot-5 g3" style="top:2%;left:0%">θ = θ - α∇J(θ)</span>
+  <span class="formula xxl rot10 a3" style="top:3%;right:0%">softmax(QKᵀ/√d)V</span>
+  <span class="formula xl rot-15 g4" style="top:8%;left:20%">∂L/∂w = 2(ŷ - y)·x</span>
+  <span class="formula lg rot5 g3" style="top:5%;left:55%">∇L = ∂L/∂θ</span>
+  <span class="formula xxxl rot-2 g2" style="top:12%;left:35%">Σ wᵢxᵢ + b</span>
+  <span class="formula xl rot-10 a2" style="top:15%;right:5%">ŷ = σ(WᵀX + b)</span>
+  <span class="formula lg rot20 g3" style="top:13%;left:2%">H(p,q) = -Σp log q</span>
+  <span class="formula xxl rot-5 g4" style="top:18%;left:10%">P(y|x) = softmax(Wx + b)</span>
+  <span class="formula xxxl rot5 g2" style="top:22%;right:0%">cos(θ) = A·B / ‖A‖‖B‖</span>
+  <span class="formula lg rot-20 a3" style="top:24%;left:5%">emb(w) ∈ ℝᵈ</span>
+  <span class="formula xl rot-5 g3" style="top:21%;left:45%">KL(p‖q) = Σp log(p/q)</span>
+  <span class="formula xxxl rot-10 g2" style="top:28%;left:-2%">Attn(Q,K,V)</span>
+  <span class="formula xxl rot15 g4" style="top:30%;right:0%">L = -Σ yᵢ log(ŷᵢ)</span>
+  <span class="formula xl rot-5 g3" style="top:32%;left:40%">RMSE = √(Σ(y-ŷ)²/n)</span>
+  <span class="formula lg rot10 a2" style="top:34%;left:8%">argmax P(y|x;θ)</span>
+  <span class="formula xxl rot-2 g3" style="top:36%;right:10%">TF-IDF(t,d) = tf · log(N/df)</span>
+  <span class="formula xxxl rot-15 g2" style="top:40%;right:-2%">σ(z) = 1/(1+e⁻ᶻ)</span>
+  <span class="formula xl rot5 g5" style="top:42%;left:2%">F1 = 2·(P·R)/(P+R)</span>
+  <span class="formula xxl rot-10 a3" style="top:44%;left:30%">P(A|B) = P(B|A)P(A)/P(B)</span>
+  <span class="formula lg rot20 g3" style="top:46%;right:5%">Recall@K = |rel∩ret|/|rel|</span>
+  <span class="formula xl rot-5 g3" style="top:45%;left:55%">BCE = -(y log ŷ)</span>
+  <span class="formula xxxl rot2 g2" style="top:48%;left:-2%">∫ p(x)dx = 1</span>
+  <span class="formula lg rot-10 g4" style="top:50%;left:40%">MRR = 1/|Q| Σ 1/rankᵢ</span>
+  <span class="formula xxl rot15 a2" style="top:49%;right:0%">tanh(x)</span>
+  <span class="formula xxxl rot-5 g2" style="top:54%;left:0%">∇²f(x)</span>
+  <span class="formula xxl rot10 g4" style="top:56%;right:2%">AUC-ROC ∈ [0,1]</span>
+  <span class="formula xl rot-20 a3" style="top:58%;left:15%">BLEU = BP·exp(Σwₙ log pₙ)</span>
+  <span class="formula lg rot5 g3" style="top:57%;left:50%">IoU = |A∩B| / |A∪B|</span>
+  <span class="formula xxl rot-2 g3" style="top:60%;right:8%">argmin Σ‖xᵢ-μₖ‖²</span>
+  <span class="formula xl rot-10 g5" style="top:62%;left:2%">R² = 1 - SS_res/SS_tot</span>
+  <span class="formula xxl rot15 g2" style="top:61%;left:35%">MAE = Σ|yᵢ-ŷᵢ|/n</span>
+  <span class="formula xxxl rot-10 a2" style="top:66%;right:-2%">∏ P(xᵢ|θ)</span>
+  <span class="formula xl rot5 g3" style="top:68%;left:5%">GeLU(x) = x·Φ(x)</span>
+  <span class="formula xxl rot-5 g4" style="top:70%;left:25%">MSE = Σ(yᵢ-ŷᵢ)²/n</span>
+  <span class="formula lg rot20 g3" style="top:69%;right:10%">dropout(x,p)</span>
+  <span class="formula xxxl rot-2 g2" style="top:72%;left:0%">W* = argmin L(W)</span>
+  <span class="formula xl rot10 a3" style="top:74%;left:45%">Adam: m=β₁m+(1-β₁)g</span>
+  <span class="formula lg rot-15 g3" style="top:73%;right:2%">LayerNorm(x)</span>
+  <span class="formula xxxl rot5 g2" style="top:78%;left:-2%">E[X] = Σxᵢp(xᵢ)</span>
+  <span class="formula xxl rot-10 g4" style="top:80%;right:0%">χ² = Σ(O-E)²/E</span>
+  <span class="formula xl rot-5 g3" style="top:82%;left:20%">Var(X) = E[X²]-E[X]²</span>
+  <span class="formula lg rot15 a3" style="top:81%;left:55%">t = (x̄-μ)/(s/√n)</span>
+  <span class="formula xxl rot-20 g2" style="top:84%;right:8%">log P(D|M)</span>
+  <span class="formula xl rot2 g4" style="top:86%;left:2%">BatchNorm = γ·x̂+β</span>
+  <span class="formula xxxl rot-5 g2" style="top:85%;left:35%">∀x∈X</span>
+  <span class="formula xxl rot10 a2" style="top:90%;left:0%">ELBO = E[log p]-KL</span>
+  <span class="formula xl rot-5 g5" style="top:92%;right:5%">Precision = TP/(TP+FP)</span>
+  <span class="formula xxl rot-10 g3" style="top:94%;left:15%">Recall = TP/(TP+FN)</span>
+  <span class="formula lg rot5 a3" style="top:96%;right:2%">Accuracy = (TP+TN)/N</span>
+  <span class="formula xxxl rot-2 g2" style="top:98%;left:40%">ReLU = max(0,x)</span>
 </div>
 
 <!-- ============ NAV ============ -->
@@ -605,7 +643,7 @@ footer {
 
 <!-- ============ METRICS ============ -->
 <!-- EDIT: Update numbers and labels -->
-<div class="metrics">
+<div class="metrics" style="position:relative">
   <div class="metric-box">
     <div class="metric-num">30%</div>
     <div class="metric-label">Ticket resolution time reduced</div>
@@ -845,6 +883,71 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+
+// Generate foreground formulas that spill OVER the UI
+(function() {
+  const formulas = [
+    // Gradient descent & optimization
+    'θ = θ - α∇J(θ)', '∂L/∂w', 'W* = argmin L(W)', '∇²f(x)', 'η·∇θJ',
+    'AdaGrad: θ -= α/√G·g', 'Adam: v=β₂v+(1-β₂)g²', 'SGD(θ,α,∇J)',
+    // Activation & neural net
+    'σ(z) = 1/(1+e⁻ᶻ)', 'ReLU = max(0,x)', 'GeLU(x) = x·Φ(x)',
+    'tanh(x)', 'Σ wᵢxᵢ + b', 'ŷ = σ(WᵀX + b)', 'dropout(x,p)',
+    // Attention & transformers
+    'Attn(Q,K,V) = softmax(QKᵀ/√d)V', 'MultiHead(Q,K,V)',
+    'LayerNorm(x)', 'PE(pos,2i) = sin(pos/10000²ⁱ/ᵈ)',
+    // NLP & embeddings
+    'emb(w) ∈ ℝᵈ', 'cos(θ) = A·B/‖A‖‖B‖', 'TF-IDF(t,d)',
+    'BPE(vocab)', 'BLEU = BP·exp(Σwₙ log pₙ)',
+    // Loss functions
+    'L = -Σ yᵢ log(ŷᵢ)', 'BCE = -(y log ŷ)', 'MSE = Σ(y-ŷ)²/n',
+    'RMSE = √(Σ(y-ŷ)²/n)', 'MAE = Σ|y-ŷ|/n',
+    // Metrics
+    'F1 = 2PR/(P+R)', 'AUC-ROC ∈ [0,1]', 'Recall@K', 'MRR = Σ1/rank',
+    'IoU = |A∩B|/|A∪B|', 'R² = 1-SS_res/SS_tot', 'Precision = TP/(TP+FP)',
+    // Probability & stats
+    'P(A|B) = P(B|A)P(A)/P(B)', 'KL(p‖q) = Σp log(p/q)',
+    'H(p) = -Σp log p', 'χ² = Σ(O-E)²/E', 'Var(X) = E[X²]-E[X]²',
+    't = (x̄-μ)/(s/√n)', 'P(y|x) = softmax(Wx+b)', '∫p(x)dx = 1',
+    // Other
+    'argmin Σ‖xᵢ-μₖ‖²', '∏P(xᵢ|θ)', 'ELBO = E[log p]-KL',
+    'BatchNorm = γx̂+β', '∀x∈X', 'E[X] = Σxᵢp(xᵢ)',
+  ];
+
+  const container = document.createElement('div');
+  container.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;user-select:none;z-index:9999;overflow:hidden;';
+  
+  const count = 30; // visible formulas floating over UI
+  for (let i = 0; i < count; i++) {
+    const span = document.createElement('span');
+    const f = formulas[Math.floor(Math.random() * formulas.length)];
+    span.textContent = f;
+    
+    const size = [11, 13, 15, 18, 22, 28, 36][Math.floor(Math.random() * 7)];
+    const opacity = 0.03 + Math.random() * 0.06; // 0.03 to 0.09
+    const rotation = -30 + Math.random() * 60;
+    const top = Math.random() * 100;
+    const left = -5 + Math.random() * 110;
+    const isAmber = Math.random() > 0.75;
+    const color = isAmber 
+      ? `rgba(244, 211, 94, ${opacity})` 
+      : `rgba(124, 255, 107, ${opacity})`;
+    
+    span.style.cssText = `
+      position:absolute;
+      font-family:'JetBrains Mono',monospace;
+      font-size:${size}px;
+      color:${color};
+      top:${top}%;
+      left:${left}%;
+      transform:rotate(${rotation}deg);
+      white-space:nowrap;
+      pointer-events:none;
+    `;
+    container.appendChild(span);
+  }
+  document.body.appendChild(container);
+})();
 </script>
 
 </body>
