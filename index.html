@@ -528,7 +528,7 @@ footer {
   .hero-title { font-size: 14px; }
   .metrics { grid-template-columns: repeat(2, 1fr); padding: 0 16px 24px; }
   .section { padding: 24px 16px; }
-  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr !important; }
   .skills-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
   .exp-top { flex-direction: column; gap: 2px; }
@@ -635,7 +635,7 @@ footer {
     <div class="profile-label">Role Focus</div>
     <div class="profile-value">Data Scientist &middot; ML Engineer</div>
     <div class="profile-label">Featured Work</div>
-    <div class="profile-value">IntelliDesk &middot; DocBrain</div>
+    <div class="profile-value">Slonik-7B &middot; IntelliDesk &middot; DocBrain</div>
     <div class="profile-label">Core Stack</div>
     <div class="profile-value">Python &middot; TensorFlow &middot; XGBoost &middot; PySpark &middot; FastAPI</div>
   </div>
@@ -644,6 +644,10 @@ footer {
 <!-- ============ METRICS ============ -->
 <!-- EDIT: Update numbers and labels -->
 <div class="metrics" style="position:relative">
+  <div class="metric-box">
+    <div class="metric-num">38.2%</div>
+    <div class="metric-label">BIRD-PG accuracy (beats GPT-4o)</div>
+  </div>
   <div class="metric-box">
     <div class="metric-num">30%</div>
     <div class="metric-label">Ticket resolution time reduced</div>
@@ -656,10 +660,6 @@ footer {
     <div class="metric-num">0.90</div>
     <div class="metric-label">Recall@5 on DocBrain RAG</div>
   </div>
-  <div class="metric-box">
-    <div class="metric-num">162</div>
-    <div class="metric-label">Pytest tests across systems</div>
-  </div>
 </div>
 
 <!-- ============ PROJECTS ============ -->
@@ -669,7 +669,25 @@ footer {
     <div class="section-cmd">~/projects$</div>
     <h2>Featured Projects</h2>
   </div>
-  <div class="projects-grid">
+  <div class="projects-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+
+    <div class="project-card">
+      <div class="project-type">LLM Fine-Tuning / Text-to-SQL</div>
+      <div class="project-name">Slonik-7B-GRPO</div>
+      <div class="project-tech">Python, PyTorch, QLoRA, GRPO, Qwen2.5-Coder-7B, BIRD-SQL, PostgreSQL, GGUF, Ollama, HuggingFace</div>
+      <p class="project-desc">Fine-tuned Qwen2.5-Coder-7B with QLoRA + GRPO (execution-based reinforcement learning) for PostgreSQL and SQLite text-to-SQL. 38.20% on BIRD-PG, outperforming GPT-4o (34.44%) at 7B parameters. 3x accuracy jump from 12.22% base. Published GGUF quantizations for local deployment via Ollama/llama.cpp.</p>
+      <div class="project-tags">
+        <span class="tag">QLoRA</span>
+        <span class="tag">GRPO</span>
+        <span class="tag">Text-to-SQL</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">GGUF</span>
+        <span class="tag">HuggingFace</span>
+      </div>
+      <a href="https://github.com/phanipal/slonik-7b" target="_blank" class="project-link">&gt; GitHub</a>
+      &nbsp;&nbsp;
+      <a href="https://huggingface.co/Phani-labs/Slonik-7B-GRPO" target="_blank" class="project-link">&gt; HuggingFace</a>
+    </div>
 
     <div class="project-card">
       <div class="project-type">ML Ticket Triage System</div>
@@ -725,7 +743,7 @@ footer {
     <div class="skill-module">
       <div class="skill-module-title">NLP / GenAI</div>
       <div class="skill-chips">
-        <span class="chip">LangChain</span><span class="chip">Llama 3.1</span><span class="chip">Sentence Transformers</span><span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">SpaCy</span><span class="chip">NLTK</span>
+        <span class="chip">LangChain</span><span class="chip">Llama 3.1</span><span class="chip">Sentence Transformers</span><span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">SpaCy</span><span class="chip">NLTK</span><span class="chip">QLoRA</span><span class="chip">GRPO</span><span class="chip">GGUF</span>
       </div>
     </div>
 
@@ -949,7 +967,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   document.body.appendChild(container);
 })();
 </script>
-<script data-goatcounter="https://phani.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+
 </body>
 </html>
