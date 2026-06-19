@@ -870,7 +870,7 @@ footer {
       I build <span class="typed" id="typed"></span><span class="caret"></span>
     </div>
     <p class="hero-bio">
-      <strong>GenAI / LLM Engineer</strong> with 5+ years building NLP, document intelligence, and retrieval-based AI systems across finance. Currently building RAG, LLM agents, and document-AI workflows at <strong>Wells Fargo</strong>. Open-source work includes a fine-tuned text-to-SQL model that beats GPT-4o at 7B, plus a grounded RAG pipeline, all with CI/CD, evaluation, and test coverage.
+      <strong>AI Engineer</strong> with 5+ years building data and ML systems, now designing production LLM and agentic systems that reason, plan, and act. At <strong>Wells Fargo</strong> I build RAG and document-AI over policy and compliance data. Open-source work includes <strong>OmniAsk</strong>, an agentic router across text-to-SQL, document RAG, and human-approved actions, plus a fine-tuned 7B text-to-SQL model that beats GPT-4o, all with CI/CD, evaluation, and test coverage.
     </p>
     <div class="hero-cta">
       <a href="resume.pdf" class="btn btn-resume" target="_blank" rel="noopener">
@@ -914,6 +914,19 @@ footer {
     </div>
 
     <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <span class="project-tag">Agentic AI / LLM Router</span>
+        <div class="project-name">OmniAsk</div>
+        <p class="project-desc">Production agentic assistant where a <strong style="color:var(--accent)">LangGraph router reasons over each request</strong> and sends it to read-only text-to-SQL, document RAG with citations, or a human-approved action. LiteLLM gateway across Claude, GPT-4o, DeepSeek, and a fine-tuned Slonik model, with database-level guardrails. Streaming FastAPI and web UI, Postgres-backed checkpointing, MCP tools, and Langfuse/Prometheus observability.</p>
+        <div class="project-tech">Python &middot; LangGraph &middot; LiteLLM &middot; Claude / GPT-4o / DeepSeek &middot; FastAPI &middot; PostgreSQL/pgvector &middot; Ollama &middot; BGE-M3 &middot; MCP &middot; Kubernetes (KEDA) &middot; Langfuse</div>
+        <div class="project-tags">
+          <span class="tag">LangGraph</span><span class="tag">Agents</span><span class="tag">MCP</span><span class="tag">RAG</span><span class="tag">Text-to-SQL</span><span class="tag">Kubernetes</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/phanipal/omniask" target="_blank" rel="noopener" class="project-link">&gt; View on GitHub &rarr;</a>
+        </div>
+      </div>
 
       <div class="project-card reveal">
         <span class="project-tag">LLM Fine-Tuning / Text-to-SQL</span>
@@ -972,100 +985,108 @@ footer {
     <div class="skills-grid">
 
       <div class="skill-module reveal">
-        <div class="skill-module-head"><span class="skill-module-title">GenAI &amp; LLMs</span></div>
+        <div class="skill-module-head"><span class="skill-module-title">Agentic AI</span></div>
         <div class="skill-list">
-          <div class="skill-row"><span class="skill-name">LangChain</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
-          <div class="skill-row"><span class="skill-name">LangGraph</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
-          <div class="skill-row"><span class="skill-name">LLM Agents</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
-          <div class="skill-row"><span class="skill-name">RAG</span><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div><span class="skill-pct">88%</span></div>
-          <div class="skill-row"><span class="skill-name">Llama 3.1</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
-          <div class="skill-row"><span class="skill-name">QLoRA / GRPO</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
-          <div class="skill-row"><span class="skill-name">Sentence-Trans.</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
-          <div class="skill-row"><span class="skill-name">FAISS / ChromaDB</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">LangGraph</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">LangChain</span><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div><span class="skill-pct">88%</span></div>
+          <div class="skill-row"><span class="skill-name">Tool Calling</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">ReAct / Plan</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">Human-in-Loop</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">Agent Routing</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">MCP</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
         </div>
       </div>
 
       <div class="skill-module reveal">
-        <div class="skill-module-head"><span class="skill-module-title">Machine Learning</span></div>
+        <div class="skill-module-head"><span class="skill-module-title">LLMs &amp; APIs</span></div>
         <div class="skill-list">
-          <div class="skill-row"><span class="skill-name">TensorFlow</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
-          <div class="skill-row"><span class="skill-name">PyTorch</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
-          <div class="skill-row"><span class="skill-name">Scikit-learn</span><div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div><span class="skill-pct">92%</span></div>
-          <div class="skill-row"><span class="skill-name">XGBoost</span><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div><span class="skill-pct">90%</span></div>
-          <div class="skill-row"><span class="skill-name">LightGBM</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
-          <div class="skill-row"><span class="skill-name">MLflow</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
-          <div class="skill-row"><span class="skill-name">Evidently AI</span><div class="skill-bar"><div class="skill-fill" data-pct="70"></div></div><span class="skill-pct">70%</span></div>
+          <div class="skill-row"><span class="skill-name">Claude</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">GPT-4o</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">DeepSeek</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">Llama 3.1</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">Qwen2.5-Coder</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">Ollama</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">LiteLLM</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">Hugging Face</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
         </div>
       </div>
 
       <div class="skill-module reveal">
-        <div class="skill-module-head"><span class="skill-module-title">Data Engineering</span></div>
+        <div class="skill-module-head"><span class="skill-module-title">RAG &amp; Retrieval</span></div>
         <div class="skill-list">
-          <div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" data-pct="95"></div></div><span class="skill-pct">95%</span></div>
+          <div class="skill-row"><span class="skill-name">RAG</span><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div><span class="skill-pct">90%</span></div>
+          <div class="skill-row"><span class="skill-name">pgvector</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">ChromaDB</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">FAISS</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">BGE-M3</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">Hybrid Search</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">Reranking</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">Chunking</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+        </div>
+      </div>
+
+      <div class="skill-module reveal">
+        <div class="skill-module-head"><span class="skill-module-title">Prompt Engineering</span></div>
+        <div class="skill-list">
+          <div class="skill-row"><span class="skill-name">Chain-of-Thought</span><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div><span class="skill-pct">88%</span></div>
+          <div class="skill-row"><span class="skill-name">Few-Shot</span><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div><span class="skill-pct">88%</span></div>
+          <div class="skill-row"><span class="skill-name">Structured Out.</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">Sys-Prompt Opt.</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">Guardrails</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">Hallucination Det.</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+        </div>
+      </div>
+
+      <div class="skill-module reveal">
+        <div class="skill-module-head"><span class="skill-module-title">Fine-Tuning</span></div>
+        <div class="skill-list">
+          <div class="skill-row"><span class="skill-name">QLoRA</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">GRPO (RL)</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
+          <div class="skill-row"><span class="skill-name">GGUF Quant.</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">HF Hub</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+        </div>
+      </div>
+
+      <div class="skill-module reveal">
+        <div class="skill-module-head"><span class="skill-module-title">LLMOps &amp; Eval</span></div>
+        <div class="skill-list">
+          <div class="skill-row"><span class="skill-name">Langfuse</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">Prometheus</span><div class="skill-bar"><div class="skill-fill" data-pct="78"></div></div><span class="skill-pct">78%</span></div>
+          <div class="skill-row"><span class="skill-name">Grafana</span><div class="skill-bar"><div class="skill-fill" data-pct="76"></div></div><span class="skill-pct">76%</span></div>
+          <div class="skill-row"><span class="skill-name">Evidently AI</span><div class="skill-bar"><div class="skill-fill" data-pct="72"></div></div><span class="skill-pct">72%</span></div>
+          <div class="skill-row"><span class="skill-name">RAG/Agent Eval</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">MLflow</span><div class="skill-bar"><div class="skill-fill" data-pct="78"></div></div><span class="skill-pct">78%</span></div>
+          <div class="skill-row"><span class="skill-name">JWT Auth</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">pytest</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+        </div>
+      </div>
+
+      <div class="skill-module reveal">
+        <div class="skill-module-head"><span class="skill-module-title">Languages &amp; Core</span></div>
+        <div class="skill-list">
+          <div class="skill-row"><span class="skill-name">Python (async)</span><div class="skill-bar"><div class="skill-fill" data-pct="95"></div></div><span class="skill-pct">95%</span></div>
           <div class="skill-row"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div><span class="skill-pct">92%</span></div>
-          <div class="skill-row"><span class="skill-name">Pandas</span><div class="skill-bar"><div class="skill-fill" data-pct="95"></div></div><span class="skill-pct">95%</span></div>
-          <div class="skill-row"><span class="skill-name">NumPy</span><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div><span class="skill-pct">88%</span></div>
-          <div class="skill-row"><span class="skill-name">PySpark</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
-          <div class="skill-row"><span class="skill-name">Apache Spark</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
-          <div class="skill-row"><span class="skill-name">ETL Pipelines</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
-        </div>
-      </div>
-
-      <div class="skill-module reveal">
-        <div class="skill-module-head"><span class="skill-module-title">Apps / APIs</span></div>
-        <div class="skill-list">
-          <div class="skill-row"><span class="skill-name">FastAPI</span><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div><span class="skill-pct">88%</span></div>
-          <div class="skill-row"><span class="skill-name">Flask</span><div class="skill-bar"><div class="skill-fill" data-pct="78"></div></div><span class="skill-pct">78%</span></div>
-          <div class="skill-row"><span class="skill-name">Streamlit</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
-          <div class="skill-row"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" data-pct="78"></div></div><span class="skill-pct">78%</span></div>
-          <div class="skill-row"><span class="skill-name">pytest</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
-        </div>
-      </div>
-
-      <div class="skill-module reveal">
-        <div class="skill-module-head"><span class="skill-module-title">Computer Vision</span></div>
-        <div class="skill-list">
-          <div class="skill-row"><span class="skill-name">OpenCV</span><div class="skill-bar"><div class="skill-fill" data-pct="72"></div></div><span class="skill-pct">72%</span></div>
-          <div class="skill-row"><span class="skill-name">Tesseract/DocTR</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
-          <div class="skill-row"><span class="skill-name">Image Segment.</span><div class="skill-bar"><div class="skill-fill" data-pct="65"></div></div><span class="skill-pct">65%</span></div>
-          <div class="skill-row"><span class="skill-name">Transfer Learn.</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
-        </div>
-      </div>
-
-      <div class="skill-module reveal">
-        <div class="skill-module-head"><span class="skill-module-title">Cloud / DevOps</span></div>
-        <div class="skill-list">
-          <div class="skill-row"><span class="skill-name">AWS S3</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
-          <div class="skill-row"><span class="skill-name">SageMaker</span><div class="skill-bar"><div class="skill-fill" data-pct="72"></div></div><span class="skill-pct">72%</span></div>
-          <div class="skill-row"><span class="skill-name">EC2</span><div class="skill-bar"><div class="skill-fill" data-pct="72"></div></div><span class="skill-pct">72%</span></div>
-          <div class="skill-row"><span class="skill-name">GCP BigQuery</span><div class="skill-bar"><div class="skill-fill" data-pct="68"></div></div><span class="skill-pct">68%</span></div>
-          <div class="skill-row"><span class="skill-name">Vertex AI</span><div class="skill-bar"><div class="skill-fill" data-pct="65"></div></div><span class="skill-pct">65%</span></div>
-          <div class="skill-row"><span class="skill-name">Azure OpenAI</span><div class="skill-bar"><div class="skill-fill" data-pct="68"></div></div><span class="skill-pct">68%</span></div>
+          <div class="skill-row"><span class="skill-name">Bash</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">FastAPI</span><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div><span class="skill-pct">90%</span></div>
+          <div class="skill-row"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
           <div class="skill-row"><span class="skill-name">Kubernetes</span><div class="skill-bar"><div class="skill-fill" data-pct="72"></div></div><span class="skill-pct">72%</span></div>
-          <div class="skill-row"><span class="skill-name">Git / GitHub Actions</span><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div><span class="skill-pct">88%</span></div>
+          <div class="skill-row"><span class="skill-name">CI/CD</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">GitHub Actions</span><div class="skill-bar"><div class="skill-fill" data-pct="88"></div></div><span class="skill-pct">88%</span></div>
         </div>
       </div>
 
       <div class="skill-module reveal">
-        <div class="skill-module-head"><span class="skill-module-title">BI / Visualization</span></div>
+        <div class="skill-module-head"><span class="skill-module-title">Cloud &amp; ML Foundation</span></div>
         <div class="skill-list">
-          <div class="skill-row"><span class="skill-name">Power BI</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
-          <div class="skill-row"><span class="skill-name">Tableau</span><div class="skill-bar"><div class="skill-fill" data-pct="72"></div></div><span class="skill-pct">72%</span></div>
-          <div class="skill-row"><span class="skill-name">Matplotlib</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
-          <div class="skill-row"><span class="skill-name">Seaborn</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
-          <div class="skill-row"><span class="skill-name">Plotly</span><div class="skill-bar"><div class="skill-fill" data-pct="78"></div></div><span class="skill-pct">78%</span></div>
-        </div>
-      </div>
-
-      <div class="skill-module reveal">
-        <div class="skill-module-head"><span class="skill-module-title">Statistical Methods</span></div>
-        <div class="skill-list">
-          <div class="skill-row"><span class="skill-name">Regression</span><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div><span class="skill-pct">90%</span></div>
-          <div class="skill-row"><span class="skill-name">Classification</span><div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div><span class="skill-pct">92%</span></div>
-          <div class="skill-row"><span class="skill-name">Clustering</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
-          <div class="skill-row"><span class="skill-name">Time Series</span><div class="skill-bar"><div class="skill-fill" data-pct="75"></div></div><span class="skill-pct">75%</span></div>
-          <div class="skill-row"><span class="skill-name">A/B Testing</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
-          <div class="skill-row"><span class="skill-name">Hypothesis Testing</span><div class="skill-bar"><div class="skill-fill" data-pct="85"></div></div><span class="skill-pct">85%</span></div>
+          <div class="skill-row"><span class="skill-name">AWS</span><div class="skill-bar"><div class="skill-fill" data-pct="80"></div></div><span class="skill-pct">80%</span></div>
+          <div class="skill-row"><span class="skill-name">GCP</span><div class="skill-bar"><div class="skill-fill" data-pct="70"></div></div><span class="skill-pct">70%</span></div>
+          <div class="skill-row"><span class="skill-name">Azure</span><div class="skill-bar"><div class="skill-fill" data-pct="68"></div></div><span class="skill-pct">68%</span></div>
+          <div class="skill-row"><span class="skill-name">PyTorch</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">TensorFlow</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">Scikit-learn</span><div class="skill-bar"><div class="skill-fill" data-pct="90"></div></div><span class="skill-pct">90%</span></div>
+          <div class="skill-row"><span class="skill-name">Pandas / NumPy</span><div class="skill-bar"><div class="skill-fill" data-pct="92"></div></div><span class="skill-pct">92%</span></div>
+          <div class="skill-row"><span class="skill-name">PySpark</span><div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div><span class="skill-pct">82%</span></div>
+          <div class="skill-row"><span class="skill-name">SpaCy / OCR</span><div class="skill-bar"><div class="skill-fill" data-pct="78"></div></div><span class="skill-pct">78%</span></div>
         </div>
       </div>
 
@@ -1089,11 +1110,11 @@ footer {
         <div class="tl-marker"></div>
         <div class="tl-content">
           <div class="tl-top">
-            <span class="tl-role">GenAI Engineer</span>
+            <span class="tl-role">AI Engineer</span>
             <span class="tl-date">Jan 2025 - Present</span>
           </div>
           <div class="tl-company">Wells Fargo</div>
-          <p class="tl-desc">Building RAG document Q&A and LLM agent workflows with LangChain and LangGraph over policy, compliance, and regulatory documents. NLP pipelines for classification, entity extraction, and summarization. LLM apps deployed as JWT-secured FastAPI services on Docker and Kubernetes, with response validation, citation checks, and retrieval evaluation (Recall@K, MRR).</p>
+          <p class="tl-desc">Build RAG document Q&A and assistant systems with LangChain, ChromaDB, and Sentence Transformers over internal policy, compliance, and regulatory documents. Multi-step LLM pipelines for classification, entity extraction, and summarization with SpaCy and Hugging Face. Deployed as JWT-secured async FastAPI endpoints with prompt guardrails, hallucination detection, and citation verification. Prompt engineering (few-shot, chain-of-thought, structured outputs) and chunking strategies to raise retrieval quality, with evaluation tracking Recall@K, MRR, token usage, and latency.</p>
         </div>
       </div>
 
@@ -1105,7 +1126,7 @@ footer {
             <span class="tl-date">Aug 2024 - Dec 2024</span>
           </div>
           <div class="tl-company">Purdue University</div>
-          <p class="tl-desc">Guided students through electrical measurements, circuit design, and debugging. Reviewed lab reports for data accuracy and technical reasoning.</p>
+          <p class="tl-desc">Coached students through electrical measurements and circuit debugging, and reviewed lab notebooks and technical reports for data accuracy and analytical reasoning.</p>
         </div>
       </div>
 
@@ -1117,7 +1138,7 @@ footer {
             <span class="tl-date">Jan 2020 - Dec 2021</span>
           </div>
           <div class="tl-company">Infosys</div>
-          <p class="tl-desc">Built a TensorFlow/Keras NLP pipeline that classified 200+ monthly tickets and recommended resolution articles via text embeddings and cosine similarity, cutting manual triage by 30%. Early text-retrieval and embedding work that led into RAG. Flask REST APIs for real-time inference.</p>
+          <p class="tl-desc">Designed and deployed an NLP deep-learning pipeline in TensorFlow/Keras to classify 200+ monthly incidents, extract intent, and auto-recommend resolution articles via text embeddings and cosine similarity, cutting manual triage by 30%. Built a TF-IDF knowledge-article retrieval system, a precursor to RAG. Text-preprocessing pipelines with NLTK, SpaCy, and Pandas, served through Flask REST APIs for real-time inference.</p>
         </div>
       </div>
 
@@ -1129,7 +1150,7 @@ footer {
             <span class="tl-date">Jan 2017 - Dec 2019</span>
           </div>
           <div class="tl-company">Infosys</div>
-          <p class="tl-desc">Automated ETL workflows using Python, Selenium, and SAP BW/APO, saving 800+ hours per year. Built data pipelines feeding into forecasting models. SQL-based data extraction and validation across global supply chain operations.</p>
+          <p class="tl-desc">Built Python automation and ETL with API integrations across SAP BW/APO, processing large-scale enterprise datasets and saving 800+ hours annually. Developed a Python email-monitoring app with rule-based NLP to auto-classify and route requests, generating ServiceNow tickets for 24/7 processing. Wrote complex SQL for data extraction and validation across SAP BW for global supply chain reporting.</p>
         </div>
       </div>
 
